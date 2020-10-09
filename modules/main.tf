@@ -10,6 +10,6 @@ variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
 resource "aws_s3_bucket" "testing" {
-  bucket = "security-mountaineering-lab-bucket1"
+  bucket = "security-mountaineering-lab-bucket-team4"
   acl    = "public-read"
 }
