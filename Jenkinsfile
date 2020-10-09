@@ -37,16 +37,6 @@ pipeline {
         sh "${env.TF_HOME}terraform destroy -input=false -auto-approve=true"
       }
     }
-    stage('AWSpec Tests') {
-      steps {
-          sh '''#!/bin/bash -l
-bundle install --path ~/.gem
-bundle exec rake spec || true
-'''
-
-        junit(allowEmptyResults: true, testResults: '**/testResults/*.xml')
-      }
-    }
     stage('Cleanup') {
       steps {
         sh "rm -rf ./*"
